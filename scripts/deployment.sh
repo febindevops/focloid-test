@@ -1,15 +1,15 @@
 #!/bin/bash
 
-cd /home/deployment/focloid-test
+sudo cd /home/deployment/focloid-test
 
-git pull
+sudo git pull
 
-cd borrower-service
+sudo cd borrower-service
 
-mvn clean install
+sudo mvn clean install
 
-service payroll stop
+sudo service payroll stop
 
-cp -pr target/borrower-service-0.0.1-SNAPSHOT.jar /opt/installer/payroll/
+sudo cp -pr target/borrower-service-0.0.1-SNAPSHOT.jar /opt/installer/payroll/
 
-service payroll start
+sudo service payroll start

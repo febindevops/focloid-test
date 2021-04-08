@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.center {
+  line-height: 200px;
+  height: 200px;
+  border: 3px;
+  text-align: center;
+}
+
+.center p {
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+}
+</style>
+</head>
+<body>
+
+<div class="center">
+  <p>Thank you. </p>
+</div>
+
+</body>
+</html>

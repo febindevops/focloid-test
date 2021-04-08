@@ -1,0 +1,42 @@
+version: '2.2'
+services:
+
+  mysql-master:
+    container_name: mysql-master
+    image: 'bitnami/mysql:latest'
+    ports:
+      - '3306:3306'
+    volumes:
+      - payroll-wallet-mysql-volume:/bitnami/mysql/data
+    environment:
+      - MYSQL_ROOT_PASSWORD=master_root_password
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin@911wallet
+      - MYSQL_DATABASE=payroll_wallet_db
+    #network_mode: bridge
+    #networks:
+    #  - payroll-wallet-network
+
+
+  borrower-service:
+      container_name: borrower-service
+      build:
+          context: ./
+          dockerfile: borrower-service/Dockerfile
+      ports:
+          - 8082:8082
+      #network_mode: bridge
+      environment:
+        - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-master:3306/payroll_wallet_db?allowPublicKeyRetrieval=true&useSSL=false
+      depends_on:
+        - mysql-master
+      #networks:
+      #  - payroll-wallet-network
+
+
+volumes:
+  payroll-wallet-mysql-volume:
+
+#networks:
+#  payroll-wallet-network:
+  

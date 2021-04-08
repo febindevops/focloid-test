@@ -1,10 +1,10 @@
 name: remote ssh command
-on: [push]
-jobs:
-
 defaults:
   run:
     working-directory: deploy
+
+on: [push]
+jobs:
 
   build:
     name: Build

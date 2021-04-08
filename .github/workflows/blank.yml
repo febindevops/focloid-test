@@ -18,4 +18,4 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         TARGET: /home/deployment/deploy/
-        script: touch text.txt
+        script: cd /home/deployment/deploy && touch text.txt

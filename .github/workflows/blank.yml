@@ -15,7 +15,7 @@ jobs:
       uses: appleboy/ssh-action@master
     - name: Install Dependencies
         working-directory: ./deploy
-        run: touch text.txt
+        run: echo "ok"
     - name: Build
         working-directory: ./deploy
         run: echo "ok2"
@@ -24,4 +24,4 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-      
+        script: touch text.txt

@@ -9,10 +9,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Install Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
     - name: Install npm dependencies
       run: echo "clean install"
     - name: Run build task

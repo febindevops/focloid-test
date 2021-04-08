@@ -4,6 +4,8 @@ cd /home/deployment/focloid-test
 
 git pull
 
+chown -R deployment:deployment /home/deployment/focloid-test
+
 cd borrower-service
 
 sudo mvn clean install

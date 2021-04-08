@@ -15,5 +15,5 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         #TARGET: /home/deployment/deploy/
-        script: cd /home/deployment/focloid-test/scripts  && bash deployment.sh  
+        script: cd /home/deployment/focloid-test/scripts  && sudo ./deployment.sh  
         

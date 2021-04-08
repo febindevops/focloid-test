@@ -1,5 +1,7 @@
 #!/bin/bash
 
+chown -R deployment:deployment /home/deployment/focloid-test
+
 cd /home/deployment/focloid-test
 
 git pull

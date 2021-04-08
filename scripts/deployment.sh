@@ -4,9 +4,7 @@ sudo cd /home/deployment/focloid-test
 
 sudo git pull
 
-sudo cd borrower-service
-
-sudo mvn clean install
+sudo cd borrower-service && sudo mvn clean install
 
 sudo service payroll stop
 

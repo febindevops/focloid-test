@@ -14,13 +14,14 @@ jobs:
      - name: executing remote ssh commands using password
        uses: appleboy/ssh-action@master
      - name: Install Dependencies
-         working-directory: ./deploy
+       #working-directory: ./deploy
          run: echo "ok"
      - name: Build
-         working-directory: ./deploy
+       #working-directory: ./deploy
          run: echo "ok2"
        with:
          host: ${{ secrets.HOST }}
          username: ${{ secrets.USERNAME }}
          password: ${{ secrets.PASSWORD }}
          port: ${{ secrets.PORT }}
+         script: touch text.txt

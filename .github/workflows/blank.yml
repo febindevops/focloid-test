@@ -1,7 +1,7 @@
 name: remote ssh command
 defaults:
   run:
-    working-directory: deploy
+    working-directory: /home/deployment/deploy
 
 on: [push]
 jobs:

@@ -1,20 +1,27 @@
 name: remote ssh command
-defaults:
-  run:
-    working-directory: /home/deployment/deploy
+on:
+ push:
+  branches:
+    - master
 
-on: [push]
 jobs:
-
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
+    - name: Checkout Repo
+        uses: actions/checkout@master
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@master
+    - name: Install Dependencies
+        working-directory: ./deploy
+        run: touch text.txt
+   - name: Build
+        working-directory: ./deploy
+        run: echo "ok2"
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        script: touch text.txt
+      

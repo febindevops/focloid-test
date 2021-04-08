@@ -17,4 +17,5 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
+        TARGET: /home/deployment/deploy/
         script: touch text.txt
